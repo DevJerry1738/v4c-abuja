@@ -1,0 +1,54 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #FFFFFF;
+  color: #0D47A1;
+  line-height: 1.6;
+  margin-top: 80px;
+}
+
+:root {
+  --v4c-blue: #0099FF;
+  --v4c-dark-blue: #0D47A1;
+  --v4c-light: #F5F9FF;
+  --v4c-white: #FFFFFF;
+  --v4c-light-gray: #E0E0E0;
+}
+
+/* ───── PERFECT CTA BUTTON SIZE (ABOUT PAGE + HEADER) ───── */
+.joinBtn,
+.mobileJoinBtn,
+.joinCta,
+.joinBtn {
+  font-size: 1rem !important;
+  padding: 1rem 2.5rem !important;
+  border-radius: 16px !important;
+  font-weight: 700 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .joinBtn,
+  .mobileJoinBtn,
+  .joinCta {
+    font-size: 1.15rem !important;
+    padding: 0.9rem 2.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .joinBtn,
+  .mobileJoinBtn,
+  .joinCta {
+    font-size: 1.1rem !important;
+    padding: 0.85rem 2rem !important;
+  }
+}

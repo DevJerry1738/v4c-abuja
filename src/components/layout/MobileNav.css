@@ -1,0 +1,80 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+  z-index: 50;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebarHeader {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* ───── UNIFORM MOBILE NAV LINKS ───── */
+.mobileNavList {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.mobileNavLink {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--v4c-dark-blue);
+  padding: 0.8rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding-left: 1.2rem;
+  text-decoration: none;
+}
+
+.mobileNavLink:hover {
+  color: var(--v4c-blue);
+  background: rgba(0, 153, 255, 0.08);
+  padding-left: 2rem;
+  transform: translateX(6px);
+}
+
+/* Special style for CTA button */
+.mobileNavLink.mobileJoinBtn {
+  background: var(--v4c-blue);
+  color: white !important;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 16px;
+  font-weight: 700;
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(0,153,255,0.3);
+}
+
+.mobileNavLink.mobileJoinBtn:hover {
+  background: #0088E6;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,153,255,0.4);
+}

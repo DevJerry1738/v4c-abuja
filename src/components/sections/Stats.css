@@ -1,0 +1,74 @@
+.stats {
+  padding: 5rem 2rem;
+  background: var(--v4c-light);
+  text-align: center;
+}
+
+.statsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.statsTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--v4c-dark-blue);
+  margin-bottom: 4rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+}
+
+.statCard {
+  padding: 1.6rem;
+}
+
+.statNumber {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--v4c-blue);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.statPlus {
+  font-size: 2rem;
+  color: var(--v4c-blue);
+  vertical-align: top;
+}
+
+.statLabel {
+  font-size: 1.3rem;
+  color: var(--v4c-dark-blue);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statsTitle {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  .statNumber {
+    font-size: 3.2rem;
+  }
+  .statPlus {
+    font-size: 2rem;
+  }
+  .statLabel {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    padding: 4rem 1rem;
+  }
+  .statsGrid {
+    gap: 2rem;
+  }
+}

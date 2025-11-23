@@ -1,0 +1,182 @@
+/* ───── TEAM HERO – EPIC & FULL WIDTH ───── */
+.team-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+
+.team-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../assets/green-legacy-3.jpg') center center / cover no-repeat fixed;
+}
+
+.team-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,26,31,0.92), rgba(0,0,0,0.7));
+}
+
+.team-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  padding: 2rem 1.5rem;
+}
+
+.team-hero-badge {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  background: rgba(14,165,233,0.25);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(14,165,233,0.4);
+  border-radius: 50px;
+  color: #7dd3fc;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+}
+
+.team-hero-title {
+  font-size: clamp(3.2rem, 8vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.6rem;
+  background: linear-gradient(90deg, #7dd3fc, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.team-hero-subtitle {
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  opacity: 0.96;
+}
+
+/* ───── TEAM GRID – SLEEK, COMPACT CARDS ───── */
+.team-main {
+  padding: 8rem 2rem 10rem;
+  background: white;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin: 5rem auto;
+}
+
+/* SMALLER, SLEEKER CARD — NO BIO */
+.team-card {
+  background: white;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,153,255,0.15);
+  border: 1px solid rgba(14,165,233,0.12);
+  transition: all 0.5s ease;
+  height: 420px; /* Compact & uniform */
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card:hover {
+  transform: translateY(-16px);
+  box-shadow: 0 35px 80px rgba(0,153,255,0.28);
+}
+
+/* Photo takes more space */
+.team-photo-wrapper {
+  height: 260px;
+  overflow: hidden;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.team-card:hover .team-photo {
+  transform: scale(1.15);
+}
+
+/* Info section — clean & tight */
+.team-info {
+  flex: 1;
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.team-name {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--v4c-dark-blue);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.team-role {
+  font-size: 1.15rem;
+  color: var(--v4c-blue);
+  font-weight: 50;
+  letter-spacing: 0.8px;
+}
+
+/* LinkedIn Button */
+.linkedin-link {
+  margin-top: 0.5rem;
+  width: 48px;
+  height: 48px;
+  background: center;
+  background: linear-gradient(135deg, #0077b5, #00a0dc);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,119,181,0.3);
+}
+
+.linkedin-link:hover {
+  transform: translateY(-8px) scale(1.15);
+  box-shadow: 0 20px 45px rgba(0,119,181,0.5);
+}
+
+/* ───── RESPONSIVE ───── */
+@media (max-width: 768px) {
+  .team-hero { padding: 10rem 1.5rem 8rem; }
+  .team-main { padding: 7rem 1.5rem 9rem; }
+  .team-card { height: 400px; }
+  .team-photo-wrapper { height: 240px; }
+  .team-info { padding: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .team-hero { padding: 9rem 1rem 7rem; }
+  .team-card { height: 380px; }
+  .team-photo-wrapper { height: 220px; }
+  .team-name { font-size: 1.6rem; }
+  .team-role { font-size: 1.1rem; }
+}
