@@ -35,11 +35,6 @@ export default function VolunteerForm() {
     }
   };
 
-  const formatPhoneForWhatsApp = (phone: string) => {
-    let cleaned = phone.replace(/\D/g, "");
-    if (cleaned.startsWith("0")) cleaned = "234" + cleaned.slice(1);
-    return cleaned.startsWith("234") ? cleaned : "234" + cleaned;
-  };
 
   const sendToWhatsApp = () => {
     const { name, phone, area, skills, availability, message } = formData;

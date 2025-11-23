@@ -1,6 +1,6 @@
 // src/components/layout/Header.tsx
 import "./Header.css";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";

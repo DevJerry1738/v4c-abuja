@@ -2,7 +2,6 @@
 import { Linkedin } from "lucide-react";
 import "./Team.css";
 import placeholderPhoto from "../assets/placeholder-team.jpg";
-import { p } from "framer-motion/client";
 
 export default function Team() {
   const team = [
