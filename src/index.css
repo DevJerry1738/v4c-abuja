@@ -52,3 +52,21 @@ body {
     padding: 0.85rem 2rem !important;
   }
 }
+
+/* Fix mobile background images getting cropped or zoomed */
+html, body {
+  image-rendering: -webkit-optimize-contrast; /* sharper on iOS */
+  image-rendering: crisp-edges;
+}
+
+/* Critical: force backgrounds to behave on mobile */
+.hero,
+.about-hero .hero-bg,
+.team-hero-bg,
+.formSection{
+  background-attachment: scroll !important;     /* ← this is the magic */
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+

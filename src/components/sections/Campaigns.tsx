@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "./Campaigns.css";
-import campaignImg1 from "../../assets/pad-a-girl.jpeg";
-import campaignImg2 from "../../assets/pad-a-girl-2.jpeg";
-import campaignImg3 from "../../assets/pad-a-girl-3.jpeg";
-import campaignImg4 from "../../assets/green-legacy-1.jpg";
-import campaignImg5 from "../../assets/green-legacy-2.jpg";
-import campaignImg6 from "../../assets/green-legacy-3.jpg";
-import campaignImg7 from "../../assets/world-cleanup-1.jpg";
-import campaignImg8 from "../../assets/world-cleanup-2.jpg";
-import campaignImg9 from "../../assets/world-cleanup-3.jpg";
-import placeholder from "../../assets/placeholder.png";
+import campaignImg1 from "../../assets/pad-a-girl.webp";
+import campaignImg2 from "../../assets/pad-a-girl-2.webp";
+import campaignImg3 from "../../assets/pad-a-girl-3.webp";
+import campaignImg4 from "../../assets/green-legacy-1.webp";
+import campaignImg5 from "../../assets/green-legacy-2.webp";
+import campaignImg6 from "../../assets/green-legacy-3.webp";
+import campaignImg7 from "../../assets/world-cleanup-1.webp";
+import campaignImg8 from "../../assets/world-cleanup-2.webp";
+import campaignImg9 from "../../assets/world-cleanup-3.webp";
+import placeholder from "../../assets/placeholder.webp";
 import { motion } from "framer-motion";
 
 // ───── TYPES ─────

@@ -1,3 +1,4 @@
+/** ───── HERO SECTION ───── */
 .hero {
   position: relative;
   height: 100vh;
@@ -7,8 +8,8 @@
   padding: 0;
 
   /* Background image */
-  background: linear-gradient(rgb(26, 26, 31), rgba(0, 0, 0, 0.68)), url('../../assets/hero-volunteers.jpg') center center / cover no-repeat;
-  background-attachment: fixed; /* beautiful parallax on desktop */
+  background: linear-gradient(rgb(26, 26, 31), rgba(0, 0, 0, 0.68)), url('../../assets/hero-volunteers.webp') center center / cover no-repeat;
+  background-attachment: scroll !important;
 
   /* Perfect centering */
   display: flex;

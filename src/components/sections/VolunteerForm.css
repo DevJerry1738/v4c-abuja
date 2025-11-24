@@ -1,8 +1,8 @@
 /* ───── FORM SECTION – COMPACT & CLASSY ───── */
 .formSection {
   padding: 5rem 1.5rem 10rem;
-   background: linear-gradient(rgb(26, 26, 31), rgba(0, 0, 0, 0.68)), url('../../assets/hero-volunteers.jpg') center center / cover no-repeat;
-  background-attachment: fixed; /* beautiful parallax on desktop */
+   background: linear-gradient(rgb(26, 26, 31), rgba(0, 0, 0, 0.68)), url('../../assets/hero-volunteers.webp') center center / cover no-repeat;
+  background-attachment: scroll !important;
 }
 
 .formContainer {

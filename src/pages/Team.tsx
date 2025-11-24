@@ -1,7 +1,7 @@
 // src/pages/Team.tsx
 import { Linkedin } from "lucide-react";
 import "./Team.css";
-import placeholderPhoto from "../assets/placeholder-team.jpg";
+import placeholderPhoto from "../assets/placeholder-team.webp"
 
 export default function Team() {
   const team = [

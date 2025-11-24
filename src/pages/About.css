@@ -18,8 +18,8 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/about-hero.jpg') center center / cover no-repeat;
-  background-attachment: fixed;
+  background: url('../assets/about-hero.webp') center center / cover no-repeat;
+  background-attachment: scroll !important;
 }
 
 .hero-overlay {

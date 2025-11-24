@@ -13,7 +13,8 @@
 .team-hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/green-legacy-3.jpg') center center / cover no-repeat fixed;
+  background: url('../assets/green-legacy-3.webp') center center / cover no-repeat fixed;
+  background-attachment: scroll !important;
 }
 
 .team-hero-overlay {
