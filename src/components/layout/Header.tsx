@@ -3,7 +3,7 @@ import "./Header.css";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 import MobileNav from "./MobileNav";
 
 export default function Header() {
