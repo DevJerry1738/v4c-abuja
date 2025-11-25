@@ -40,13 +40,13 @@ export default function VolunteerForm() {
 
     // Properly encode the entire message
     const text = encodeURIComponent(
-      `*New Volunteer Registration*%0A%0A` +
-      `*Name:* ${name}%0A` +
-      `*Phone:* ${phone}%0A` +
-      `*Area:* ${area}%0A` +
-      `*Skills:* ${skills || "Not specified"}%0A` +
-      `*Availability:* ${availability || "Not specified"}%0A` +
-      `*Message:* ${message || "No message"}%0A%0A` +
+      `New Volunteer Registration` +
+      `Name: ${name}` +
+      `Phone: ${phone}` +
+      `Area: ${area}` +
+      `Skills: ${skills || "Not specified"}` +
+      `Availability: ${availability || "Not specified"}` +
+      `Message: ${message || "No message"}` +
       `_Sent from Volunteers4Cause Abuja website_`
     );
 
