@@ -28,31 +28,34 @@ export default function VolunteerForm() {
         cleaned.length === 13 && cleaned.startsWith("234") ||
         (cleaned.length === 10 && ["7", "8", "9"].includes(cleaned[0]));
 
-      setPhoneError(value && !isValid 
-        ? "Please enter a valid Nigerian number (e.g. 0803 123 4567)" 
+      setPhoneError(value && !isValid
+        ? "Please enter a valid Nigerian number (e.g. 0803 123 4567)"
         : ""
       );
     }
   };
 
-
   const sendToWhatsApp = () => {
     const { name, phone, area, skills, availability, message } = formData;
-    const formattedPhone = "2348144076082"; // ← Your official number
 
-    const text = 
+    // Properly encode the entire message
+    const text = encodeURIComponent(
       `*New Volunteer Registration*%0A%0A` +
       `*Name:* ${name}%0A` +
       `*Phone:* ${phone}%0A` +
       `*Area:* ${area}%0A` +
       `*Skills:* ${skills || "Not specified"}%0A` +
-      `*Availability:* ${availability || "Flexible"}%0A` +
+      `*Availability:* ${availability || "Not specified"}%0A` +
       `*Message:* ${message || "No message"}%0A%0A` +
-      `_Sent from Volunteers4Cause Abuja website_`;
+      `_Sent from Volunteers4Cause Abuja website_`
+    );
 
-    window.open(`https://wa.me/${formattedPhone}?text=${text}`, "_blank");
+    const waNumber = "2348144076082"; // ← Your official number
 
-    // Optional: reset form
+    // This will now open WhatsApp with FULLY FILLED MESSAGE
+    window.open(`https://wa.me/${waNumber}?text=${text}`, "_blank");
+
+    // Reset form
     setFormData({
       name: "",
       phone: "",
@@ -101,7 +104,7 @@ export default function VolunteerForm() {
                 style={{ borderColor: phoneError ? "#ef4444" : undefined }}
               />
               {phoneError && (
-                <p style={{ color: "#ef4444", fontSize: "0.95rem", marginTop: "0.6rem", fontWeight: "left" }}>
+                <p style={{ color: "#ef4444", fontSize: "0.95rem", marginTop: "0.6rem" }}>
                   {phoneError}
                 </p>
               )}
