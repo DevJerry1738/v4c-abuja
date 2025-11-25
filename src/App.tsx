@@ -31,7 +31,7 @@ function App() {
       <div className="min-h-screen flex flex-col">
         {/* Header & WhatsApp are on every page */}
         <Header />
-        {/* <FloatingWhatsApp /> */}
+        <FloatingWhatsApp />
 
         {/* Main content changes based on route */}
         <main className="flex-1">

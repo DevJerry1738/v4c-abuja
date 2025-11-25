@@ -1,7 +1,6 @@
 // src/components/layout/Footer.tsx
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import "./Footer.css";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (

@@ -19,7 +19,6 @@ import campaignImg12 from "../../assets/millennium-3.webp";
 import campaignImg13 from "../../assets/tree-planting-1.webp";
 import campaignImg14 from "../../assets/tree-planting-2.webp";
 import campaignImg15 from "../../assets/tree-planting-3.webp";
-import placeholder from "../../assets/placeholder.webp";
 
 // ───── TYPES ─────
 type CampaignImage = string | string[];
