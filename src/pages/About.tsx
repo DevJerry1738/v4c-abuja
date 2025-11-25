@@ -75,7 +75,7 @@ export default function About() {
               <strong>Volunteers4Cause Abuja Chapter</strong> is a dynamic network of passionate, purpose-driven individuals committed to creating meaningful social change across communities in Abuja, Nigeria.
             </p>
             <p>
-              As a proud community powered by <strong>WorldMerit</strong>, our mission is to empower youth and mobilize citizens to take action toward solving real-life challenges — especially those related to poverty, education, health, climate action, civic engagement, and gender equality.
+              As a proud community powered by <strong>WorldMerit</strong>, our mission is to empower youth and mobilize citizens to take action toward solving real-life challenges, especially those related to poverty, education, health, climate action, civic engagement, and gender equality.
             </p>
           </div>
 

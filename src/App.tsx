@@ -9,14 +9,29 @@ import VolunteerForm from "./components/sections/VolunteerForm";
 import Footer from "./components/layout/Footer";
 import About from "./pages/About";
 import Team from "./pages/Team";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         {/* Header & WhatsApp are on every page */}
         <Header />
-        <FloatingWhatsApp />
+        {/* <FloatingWhatsApp /> */}
 
         {/* Main content changes based on route */}
         <main className="flex-1">

@@ -1,6 +1,7 @@
 // src/components/layout/Footer.tsx
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -50,17 +51,15 @@ export default function Footer() {
           <h3>Follow Our Journey</h3>
           <p>Stay connected across platforms</p>
           <div className="socialLinks">
-            <a href="#" className="socialIcon" aria-label="Facebook">
+            <a href="https://web.facebook.com/profile.php/?id=61577345277312&_rdc=1&_rdr#" className="socialIcon" aria-label="Facebook">
               <Facebook size={24} />
             </a>
-            <a href="#" className="socialIcon" aria-label="Instagram">
+            <a href="https://www.instagram.com/volunteers4cause.abuja.chapter/" className="socialIcon" aria-label="Instagram">
               <Instagram size={24} />
             </a>
-            <a href="#" className="socialIcon" aria-label="Twitter">
-              <Twitter size={24} />
-            </a>
-            <a href="#" className="socialIcon" aria-label="YouTube">
-              <Youtube size={24} />
+            
+            <a href="https://www.linkedin.com/in/volunteers4cause-abuja-chapter-961aba36b/" className="socialIcon" aria-label="LinkedIn">
+            <Linkedin size={24} />
             </a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import "./Hero.css";
+import { h2 } from "framer-motion/client";
 
 export default function Hero() {
   return (
@@ -40,5 +41,7 @@ export default function Hero() {
         </motion.a>
       </div>
     </section>
+
+    
   );
 }

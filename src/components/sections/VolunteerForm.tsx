@@ -38,7 +38,7 @@ export default function VolunteerForm() {
 
   const sendToWhatsApp = () => {
     const { name, phone, area, skills, availability, message } = formData;
-    const formattedPhone = "2349011448616"; // ← Your official number
+    const formattedPhone = "2348144076082"; // ← Your official number
 
     const text = 
       `*New Volunteer Registration*%0A%0A` +

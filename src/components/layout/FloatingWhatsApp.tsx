@@ -3,7 +3,7 @@ import "./FloatingWhatsApp.css";
 import { MessageCircle } from "lucide-react";
 
 export default function FloatingWhatsApp() {
-  const phone = "2348030000000"; // ← change to real number
+  const phone = "2348144076082"; // ← change to real number
   const text = "Hi! I want to volunteer with V4C Abuja Chapter";
 
   return (

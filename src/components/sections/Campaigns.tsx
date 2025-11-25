@@ -1,6 +1,9 @@
+// src/components/sections/Campaigns.tsx
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { motion } from "framer-motion";
 import "./Campaigns.css";
+
 import campaignImg1 from "../../assets/pad-a-girl.webp";
 import campaignImg2 from "../../assets/pad-a-girl-2.webp";
 import campaignImg3 from "../../assets/pad-a-girl-3.webp";
@@ -10,29 +13,36 @@ import campaignImg6 from "../../assets/green-legacy-3.webp";
 import campaignImg7 from "../../assets/world-cleanup-1.webp";
 import campaignImg8 from "../../assets/world-cleanup-2.webp";
 import campaignImg9 from "../../assets/world-cleanup-3.webp";
+import campaignImg10 from "../../assets/millennium-1.webp";
+import campaignImg11 from "../../assets/millennium-2.webp";
+import campaignImg12 from "../../assets/millennium-3.webp";
+import campaignImg13 from "../../assets/tree-planting-1.webp";
+import campaignImg14 from "../../assets/tree-planting-2.webp";
+import campaignImg15 from "../../assets/tree-planting-3.webp";
 import placeholder from "../../assets/placeholder.webp";
-import { motion } from "framer-motion";
 
 // ───── TYPES ─────
-type CampaignImage = string | string | string[];
+type CampaignImage = string | string[];
 
-type RecentCampaign = {
+interface RecentCampaign {
   title: string;
   desc: string;
   tag: string;
   images: CampaignImage;
-};
+}
 
-type UpcomingCampaign = {
+interface UpcomingCampaign {
   title: string;
   desc: string;
-  progress: number;
-  goal: string;
   images: CampaignImage;
-};
+}
 
 // ───── LIGHTBOX ─────
-type LightboxProps = { images: string[]; startIndex: number; onClose: () => void; };
+interface LightboxProps {
+  images: string[];
+  startIndex: number;
+  onClose: () => void;
+}
 
 function Lightbox({ images, startIndex, onClose }: LightboxProps) {
   const [current, setCurrent] = useState(startIndex);
@@ -61,7 +71,10 @@ function Lightbox({ images, startIndex, onClose }: LightboxProps) {
 }
 
 // ───── CAROUSEL ─────
-type ImageCarouselProps = { images: string[]; onImageClick: (index: number) => void; };
+interface ImageCarouselProps {
+  images: string[];
+  onImageClick: (index: number) => void;
+}
 
 function ImageCarousel({ images, onImageClick }: ImageCarouselProps) {
   const [current, setCurrent] = useState(0);
@@ -116,6 +129,7 @@ function ImageCarousel({ images, onImageClick }: ImageCarouselProps) {
   );
 }
 
+
 // ───── MAIN COMPONENT ─────
 export default function Campaigns() {
   const [activeTab, setActiveTab] = useState<"recent" | "upcoming">("recent");
@@ -123,10 +137,9 @@ export default function Campaigns() {
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
 
   const toggleExpand = (index: number) => {
-    setExpandedCards(prev => {
+    setExpandedCards((prev) => {
       const next = new Set(prev);
-      if (next.has(index)) next.delete(index);
-      else next.add(index);
+      next.has(index) ? next.delete(index) : next.add(index);
       return next;
     });
   };
@@ -146,34 +159,34 @@ export default function Campaigns() {
     },
     {
       title: "World Cleanup Day 2025",
-      desc: "Volunteers4Cause Abuja partnered with Refab Africa to fight textile and fashion waste, raising awareness on sustainability and showcasing innovative ways to turn discarded fabrics into useful resources. Together, we demonstrated that small conscious actions can create meaningful environmental impact.",
+      desc: "Volunteers4Cause Abuja partnered with Refab Africa to fight textile and fashion waste, raising awareness on sustainability and showcasing innovative ways to turn discarded fabrics into useful resources.",
       tag: "Completed",
       images: [campaignImg7, campaignImg8, campaignImg9],
+    },
+    {
+      title: "Millennium Park Sanitation",
+      desc: "Through our Millennium Park Sanitation campaign, Volunteers4Cause Abuja cleaned and revitalized one of Abuja’s most popular public spaces while raising awareness on environmental stewardship.",
+      tag: "Completed",
+      images: [campaignImg10, campaignImg11, campaignImg12],
     },
   ];
 
   const upcomingCampaigns: UpcomingCampaign[] = [
     {
-      title: "Christmas Joy 2025",
-      desc: "Bringing food, toys, and joy to 5,000 children in orphanages and IDP camps this December.",
-      progress: 68,
-      goal: "5,000 children",
-      images: [placeholder],
+      title: "Pad a Girl – Phase 2",
+      desc: "Building on the success of Phase 1, we’re reaching 10,000 more schoolgirls across Abuja and beyond in 2025 with sanitary pads, menstrual health education, and a safe-space discussions on menstrual wellbeing.",
+      images: [campaignImg1,campaignImg2,campaignImg3],
     },
     {
-      title: "Youth Mental Health Summit",
-      desc: "A one-day summit with experts to support mental wellness for Abuja youth in January 2026.",
-      progress: 45,
-      goal: "500 attendees",
-      images: [placeholder],
+      title: "Abuja Tree Planting",
+      desc: "We’re planting 250 trees across the FCT with schools, communities, and partners. Growing a greener, cooler, healthier Abuja, one tree at a time.",
+      images: [campaignImg13,campaignImg14,campaignImg15],
     },
-    {
-      title: "Ramadan Feeding Program",
-      desc: "Daily iftar meals for 2,000 people throughout Ramadan 2026.",
-      progress: 20,
-      goal: "60,000 meals",
-      images: [placeholder],
-    },
+    // {
+    //   title: "Back-to-School Drive 2025",
+    //   desc: "Providing school bags, books, uniforms, and shoes to 8,000 children from low-income families so they can start the new school year with confidence and pride.",
+    //   images: [placeholder],
+    // },
   ];
 
   const campaignsToShow = activeTab === "recent" ? recentCampaigns : upcomingCampaigns;
@@ -186,21 +199,26 @@ export default function Campaigns() {
     <>
       <section className="campaigns" id="campaigns">
         <div className="campaignsContainer">
-          
           <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="campaignsTitle"
-        >
-          Our Campaigns
-        </motion.h2>
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="campaignsTitle"
+          >
+            Our Campaigns
+          </motion.h2>
 
           <div className="campaignTabs">
-            <button className={`tabButton ${activeTab === "recent" ? "active" : ""}`} onClick={() => setActiveTab("recent")}>
+            <button
+              className={`tabButton ${activeTab === "recent" ? "active" : ""}`}
+              onClick={() => setActiveTab("recent")}
+            >
               Recent & Completed
             </button>
-            <button className={`tabButton ${activeTab === "upcoming" ? "active" : ""}`} onClick={() => setActiveTab("upcoming")}>
+            <button
+              className={`tabButton ${activeTab === "upcoming" ? "active" : ""}`}
+              onClick={() => setActiveTab("upcoming")}
+            >
               Upcoming Campaigns
             </button>
           </div>
@@ -216,7 +234,7 @@ export default function Campaigns() {
 
                   <div className="campaignContent">
                     <span className={`campaignTag ${"tag" in campaign ? "completedTag" : ""}`}>
-                      {"tag" in campaign ? campaign.tag : "Upcoming"}
+                      {"tag" in campaign ? (campaign as RecentCampaign).tag : "Upcoming"}
                     </span>
 
                     <h3>{campaign.title}</h3>
@@ -225,7 +243,6 @@ export default function Campaigns() {
                       {campaign.desc}
                     </p>
 
-                    {/* View More Button */}
                     {campaign.desc.split(" ").length > 20 && (
                       <button
                         className={`viewMoreBtn ${isExpanded ? "expanded" : ""}`}
@@ -236,17 +253,9 @@ export default function Campaigns() {
                     )}
 
                     {"progress" in campaign && (
-                      <>
-                        {/* <div className="progressBar">
-                          <div className="progressFill" style={{ width: `${campaign.progress}%` }} />
-                        </div>
-                        <p style={{ textAlign: "center", fontWeight: 600, color: "var(--v4c-blue)" }}>
-                          {campaign.progress}% funded • {campaign.goal}
-                        </p> */}
-                        <a href="#form" className="volunteerBtn">
-                          Volunteer for This Campaign
-                        </a>
-                      </>
+                      <a href="#form" className="volunteerBtn">
+                        Volunteer for This Campaign
+                      </a>
                     )}
                   </div>
                 </div>
