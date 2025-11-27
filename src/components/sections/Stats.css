@@ -1,5 +1,5 @@
 .stats {
-  padding: 8rem 2rem;
+  padding: 5rem 2rem;
   background: linear-gradient(135deg, #f0faff 0%, #f8fdff 100%);
   text-align: center;
 }
@@ -56,8 +56,8 @@
 
 /* Title */
 .statsTitle {
-  font-size: 3.4rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--v4c-dark-blue);
   margin-bottom: 5rem;
   background: linear-gradient(90deg, var(--v4c-blue), #00ccff);
@@ -70,7 +70,7 @@
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 3.5rem;
+  gap: 2rem;
 }
 
 .statCard {
@@ -79,15 +79,18 @@
   border-radius: 32px;
   box-shadow: 0 20px 60px rgba(0,153,255,0.15);
   transition: transform 0.4s ease;
+  opacity: 0.5;
 }
 
 .statCard:hover {
   transform: translateY(-12px);
+  box-shadow: 0 30px 80px rgba(0,153,255,0.25);
+  opacity: 1;
 }
 
 .statNumber {
-  font-size: 4.2rem;
-  font-weight: 900;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--v4c-blue);
   line-height: 1;
   margin-bottom: 1rem;
@@ -102,7 +105,7 @@
 .statLabel {
   font-size: 1.4rem;
   color: var(--v4c-dark-blue);
-  font-weight: 700;
+  font-weight: 500;
   opacity: 0.95;
   line-height: 1.5;
 }

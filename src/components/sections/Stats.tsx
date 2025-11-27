@@ -40,8 +40,8 @@ export default function Stats() {
   const stats = [
     { number: 500, suffix: "+", label: "Active Volunteers in Abuja" },
     { number: 25, suffix: "+", label: "Campaigns Completed" },
-    { number: 15000, suffix: "+", label: "Lives Impacted in FCT" },
-    { number: 2000, suffix: "+", label: "Global Volunteers Network" },
+    { number: 1000, suffix: "+", label: "Lives Impacted in FCT" },
+    { number: 100, suffix: "+", label: "Global Volunteers Network" },
   ];
 
   return (

@@ -33,7 +33,7 @@ export default function Footer() {
           <h3>Contact Us</h3>
           <div className="contactItem">
             <Phone size={20} />
-            <span>+234 901 144 8616</span>
+            <span>+234 814 407 6082</span>
           </div>
           <div className="contactItem">
             <Mail size={20} />
