@@ -1,4 +1,4 @@
-/* ───── TEAM HERO – EPIC & FULL WIDTH ───── */
+/* ───── TEAM HERO ───── */
 .team-hero {
   position: relative;
   min-height: 85vh;
@@ -65,10 +65,9 @@
   opacity: 0.96;
 }
 
-/* ───── TEAM GRID – SLEEK, COMPACT CARDS ───── */
+/* ───── TEAM GRID – MODERN CIRCULAR AVATARS ───── */
 .team-main {
-  padding: 8rem 2rem 10rem;
-  background: white;
+  background: linear-gradient(to bottom, #f8fdff 0%, white 30%);
 }
 
 .team-container {
@@ -79,105 +78,101 @@
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
-  margin: 5rem auto;
+  gap: 4rem;
+  margin: 3rem auto;
 }
 
-/* SMALLER, SLEEKER CARD — NO BIO */
+/* ───── SLEEK CIRCULAR CARD ───── */
 .team-card {
   background: white;
   border-radius: 32px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,153,255,0.15);
-  border: 1px solid rgba(14,165,233,0.12);
+  padding: 3rem 2rem;
+  text-align: center;
+  /* box-shadow: 0 20px 60px rgba(0,153,255,0.15); */
+  border: 1px solid rgba(14,165,233,0.1);
   transition: all 0.5s ease;
-  height: 420px; /* Compact & uniform */
-  display: flex;
-  flex-direction: column;
+  max-width: 380px;
+  margin: 0 auto;
+  max-width: 400px;
 }
 
 .team-card:hover {
-  transform: translateY(-16px);
+  transform: translateY(-20px);
   box-shadow: 0 35px 80px rgba(0,153,255,0.28);
 }
 
-/* Photo takes more space */
-.team-photo-wrapper {
-  height: 260px;
+/* Circular Avatar */
+.avatar-wrapper {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
   overflow: hidden;
+  border: 6px solid #e6f7ff;
+  box-shadow: 0 15px 40px rgba(0,153,255,0.25);
+  transition: all 0.4s ease;
+}
+
+.team-card:hover .avatar-wrapper {
+  border-color: var(--v4c-blue);
+  transform: scale(1.08);
 }
 
 .team-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s ease;
 }
 
-.team-card:hover .team-photo {
-  transform: scale(1.15);
-}
-
-/* Info section — clean & tight */
-.team-info {
-  flex: 1;
-  padding: 2rem 1.8rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
+/* Name & Role */
 .team-name {
-  font-size: 1.5em;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: var(--v4c-dark-blue);
-  margin: 0;
+  margin: 0 0 0.8rem;
   line-height: 1.2;
 }
 
 .team-role {
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: var(--v4c-blue);
-  font-weight: 50;
-  letter-spacing: 0.8px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
 }
 
-/* LinkedIn Button */
+/* LinkedIn Icon */
 .linkedin-link {
-  margin-top: 0.5rem;
-  width: 48px;
-  height: 48px;
-  background: center;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, #0077b5, #00a0dc);
   color: white;
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0,119,181,0.3);
+  box-shadow: 0 12px 35px rgba(0,119,181,0.35);
 }
 
 .linkedin-link:hover {
-  transform: translateY(-8px) scale(1.15);
-  box-shadow: 0 20px 45px rgba(0,119,181,0.5);
+  transform: translateY(-10px) scale(1.15);
+  box-shadow: 0 25px 50px rgba(0,119,181,0.5);
 }
 
 /* ───── RESPONSIVE ───── */
 @media (max-width: 768px) {
   .team-hero { padding: 10rem 1.5rem 8rem; }
-  .team-main { padding: 7rem 1.5rem 9rem; }
-  .team-card { height: 400px; }
-  .team-photo-wrapper { height: 240px; }
-  .team-info { padding: 1.8rem; }
+  .team-main { padding: 2rem 1.5rem 10rem; }
+  .avatar-wrapper { width: 160px; height: 160px; }
+  .team-name { font-size: 1.7rem; }
+  .team-role { font-size: 1.2rem; }
 }
 
 @media (max-width: 480px) {
   .team-hero { padding: 9rem 1rem 7rem; }
-  .team-card { height: 380px; }
-  .team-photo-wrapper { height: 220px; }
+  .avatar-wrapper { width: 140px; height: 140px; }
   .team-name { font-size: 1.6rem; }
-  .team-role { font-size: 1.1rem; }
+  .team-role { font-size: 1.15rem; }
+  .team-card { padding: 2.5rem 1.8rem; }
 }

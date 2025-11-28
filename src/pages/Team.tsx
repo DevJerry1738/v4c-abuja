@@ -1,39 +1,35 @@
 // src/pages/Team.tsx
 import { Linkedin } from "lucide-react";
 import "./Team.css";
-import placeholderPhoto from "../assets/placeholder-team.webp"
+import team1 from "../assets/team-1.webp";
+import team2 from "../assets/team-2.webp";
+import team3 from "../assets/team-3.webp";
 
 export default function Team() {
   const team = [
     {
-      name: "Dr. Aisha Ibrahim",
-      role: "Chapter Coordinator",
-      photo: placeholderPhoto,
+      name: "Ummi-khulsum Jibreel",
+      role: "Communication Lead",
+      photo: team2,
       linkedin: "",
     },
     {
-      name: "Chidi Okeke",
-      role: "Programs Lead",
-      photo: placeholderPhoto,
-      linkedin: "",
+      name: "Juliana Jesse Mavah",
+      role: "Assistant Outreach Lead",
+      photo: team3,
+      linkedin: "https://www.linkedin.com/in/juliana-jesse-mavah-15857a144/",
     },
     {
-      name: "Fatima Yusuf",
-      role: "Media & Communications",
-      photo: placeholderPhoto,
-      linkedin: "",
+      name: "Jideofor Onyeka Jeremiah",
+      role: "Web Developer",
+      photo: team1,
+      linkedin: "https://www.linkedin.com/in/onyeka-jeremiah-jideofor-46154736b/",
     },
-    {
-      name: "Emeka Nwosu",
-      role: "Logistics & Partnerships",
-      photo: placeholderPhoto,
-      linkedin: "",
-    },
+   
   ];
 
   return (
     <>
-      {/* HERO */}
       <section className="team-hero">
         <div className="team-hero-bg"></div>
         <div className="team-hero-overlay"></div>
@@ -46,21 +42,17 @@ export default function Team() {
         </div>
       </section>
 
-      {/* TEAM GRID */}
       <section className="team-main">
         <div className="team-container">
           <div className="team-grid">
             {team.map((member) => (
               <div className="team-card" key={member.name}>
-                <div className="team-photo-wrapper">
+                <div className="avatar-wrapper">
                   <img src={member.photo} alt={member.name} className="team-photo" />
                 </div>
-                <div className="team-info">
-                  <h3 className="team-name">{member.name}</h3>
-                  <p className="team-role">{member.role}</p>
-                  
-                  
-                  {/* LinkedIn Link */}
+                <h3 className="team-name">{member.name}</h3>
+                <p className="team-role">{member.role}</p>
+                {member.linkedin ? (
                   <a
                     href={member.linkedin}
                     target="_blank"
@@ -70,7 +62,9 @@ export default function Team() {
                   >
                     <Linkedin size={28} />
                   </a>
-                </div>
+                ) : (
+                  <div style={{ height: "56px" }} />
+                )}
               </div>
             ))}
           </div>
