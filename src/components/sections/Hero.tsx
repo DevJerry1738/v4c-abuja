@@ -1,11 +1,15 @@
+// src/components/sections/Hero.tsx
 import { motion } from "framer-motion";
 import "./Hero.css";
 
-
 export default function Hero() {
+  const scrollToVolunteer = () => {
+    const element = document.getElementById("volunteer");
+    element?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section className="hero" id="hero">
-      {/* Content is perfectly centered thanks to flexbox on .hero */}
       <div className="heroContent">
         <motion.h1
           className="heroTitle"
@@ -27,8 +31,9 @@ export default function Hero() {
           Help support development, outreach, and community programs across the FCT.
         </motion.p>
 
-        <motion.a
-          href="#form"
+        {/* Updated: now scrolls to the Volunteer CTA section */}
+        <motion.button
+          onClick={scrollToVolunteer}
           className="heroCta"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -38,10 +43,8 @@ export default function Hero() {
           whileTap={{ scale: 0.95 }}
         >
           Get Involved Now
-        </motion.a>
+        </motion.button>
       </div>
     </section>
-
-    
   );
 }

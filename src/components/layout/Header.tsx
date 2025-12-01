@@ -5,35 +5,35 @@ import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.webp";
 import MobileNav from "./MobileNav";
+import VolunteerModal from "../sections/VolunteerModal";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showVolunteerModal, setShowVolunteerModal] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Smart navigation: go home + scroll if needed
   const goToSection = (sectionId: string) => {
-    // If we're not on the home page → navigate to home first
     if (location.pathname !== "/") {
       navigate("/");
-      // Wait for home to load, then scroll
       setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        element?.scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
       }, 400);
     } else {
-      // Already on home → just scroll
-      const element = document.getElementById(sectionId);
-      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     }
-    setMobileOpen(false); // close mobile menu
+    setMobileOpen(false);
+  };
+
+  const openVolunteerModal = () => {
+    setShowVolunteerModal(true);
+    setMobileOpen(false);
   };
 
   return (
     <>
       <header className="header">
         <div className="headerContainer">
-          {/* Logo + Title */}
           <div className="logoSection">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
               <img src={logo} alt="Volunteers4Cause" />
@@ -44,34 +44,38 @@ export default function Header() {
             </div>
           </div>
 
-          {/* DESKTOP NAVIGATION */}
+          {/* DESKTOP NAV */}
           <nav className="desktopNav">
             <button onClick={() => goToSection("campaigns")} className="navLink">
               Campaigns
             </button>
-            <Link to="/about" className="navLink">
-              About
-            </Link>
-            <Link to="/team" className="navLink">
-              Team
-            </Link>
-            <button onClick={() => goToSection("form")} className="joinBtn desktopJoinBtn">
+            <Link to="/about" className="navLink">About</Link>
+            <Link to="/team" className="navLink">Team</Link>
+            <button onClick={openVolunteerModal} className="joinBtn desktopJoinBtn">
               Join as Volunteer
             </button>
           </nav>
 
-          {/* MOBILE MENU BUTTON */}
-          <button
-            className="mobileMenuBtn"
-            onClick={() => setMobileOpen(true)}
-          >
+          {/* MOBILE MENU */}
+          <button className="mobileMenuBtn" onClick={() => setMobileOpen(true)}>
             <Menu size={32} color="#0D47A1" />
           </button>
         </div>
       </header>
 
-      {/* MOBILE NAV — PASS goToSection SO IT WORKS FROM ANY PAGE */}
-      <MobileNav isOpen={mobileOpen} onClose={() => setMobileOpen(false)} goToSection={goToSection} />
+      {/* PASS openVolunteerModal TO MOBILE NAV */}
+      <MobileNav
+        isOpen={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        goToSection={goToSection}
+        openVolunteerModal={openVolunteerModal}
+      />
+
+      {/* MODAL — NOW CONTROLLED FROM HEADER */}
+      <VolunteerModal
+        isOpen={showVolunteerModal}
+        onClose={() => setShowVolunteerModal(false)}
+      />
     </>
   );
 }

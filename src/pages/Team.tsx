@@ -6,6 +6,7 @@ import team2 from "../assets/team-2.webp";
 import team3 from "../assets/team-3.jpg";
 import team4 from "../assets/team-4.webp";
 import team5 from "../assets/team-5.webp";
+import team6 from "../assets/team-6.png";
 
 export default function Team() {
   const team = [
@@ -34,11 +35,19 @@ export default function Team() {
       linkedin: "",
     },
     {
+      name: "Agbo Thomas Tordue",
+      role: "Recruitment Lead",
+      photo: team6,
+      linkedin: "",
+    },
+    {
       name: "Jideofor Onyeka Jeremiah",
       role: "Web Developer",
       photo: team1,
       linkedin: "https://www.linkedin.com/in/onyeka-jeremiah-jideofor-46154736b/",
     },
+    
+    
     
 
    
