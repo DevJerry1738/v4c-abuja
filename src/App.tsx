@@ -5,7 +5,6 @@ import FloatingWhatsApp from "./components/layout/FloatingWhatsApp";
 import Hero from "./components/sections/Hero";
 import Stats from "./components/sections/Stats";
 import Campaigns from "./components/sections/Campaigns";
-import VolunteerForm from "./components/sections/VolunteerCTA";
 import Footer from "./components/layout/Footer";
 import About from "./pages/About";
 import AboutPreview from "./components/sections/AboutPreview";
