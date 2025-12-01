@@ -35,10 +35,10 @@ export default function Footer() {
             <Phone size={20} />
             <span>+234 814 407 6082</span>
           </div>
-          <div className="contactItem">
+          {/* <div className="contactItem">
             <Mail size={20} />
             <span>abuja@volunteers4cause.org</span>
-          </div>
+          </div> */}
           <div className="contactItem">
             <MapPin size={20} />
             <span>Abuja, Nigeria</span>

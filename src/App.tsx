@@ -5,12 +5,15 @@ import FloatingWhatsApp from "./components/layout/FloatingWhatsApp";
 import Hero from "./components/sections/Hero";
 import Stats from "./components/sections/Stats";
 import Campaigns from "./components/sections/Campaigns";
-import VolunteerForm from "./components/sections/VolunteerForm";
+import VolunteerForm from "./components/sections/VolunteerCTA";
 import Footer from "./components/layout/Footer";
 import About from "./pages/About";
+import AboutPreview from "./components/sections/AboutPreview";
 import Team from "./pages/Team";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import VolunteerCTA from "./components/sections/VolunteerCTA";
+import Gallery from "./components/sections/Gallery";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,9 +45,11 @@ function App() {
               element={
                 <>
                   <Hero />
+                  <AboutPreview />
                   <Stats />
                   <Campaigns />
-                  <VolunteerForm />
+                  <VolunteerCTA />
+                  <Gallery />
                 </>
               }
             />

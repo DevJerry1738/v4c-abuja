@@ -3,10 +3,18 @@ import { Linkedin } from "lucide-react";
 import "./Team.css";
 import team1 from "../assets/team-1.webp";
 import team2 from "../assets/team-2.webp";
-import team3 from "../assets/team-3.webp";
+import team3 from "../assets/team-3.jpg";
+import team4 from "../assets/team-4.webp";
+import team5 from "../assets/team-5.webp";
 
 export default function Team() {
   const team = [
+    {
+      name: "Sese Bula",
+      role: "Team Lead",
+      photo: team4,
+      linkedin: "",
+    },
     {
       name: "Ummi-khulsum Jibreel",
       role: "Communication Lead",
@@ -15,9 +23,15 @@ export default function Team() {
     },
     {
       name: "Juliana Jesse Mavah",
-      role: "Assistant Outreach Lead",
+      role: "Outreach Lead",
       photo: team3,
       linkedin: "https://www.linkedin.com/in/juliana-jesse-mavah-15857a144/",
+    },
+    {
+      name: "Zong Janet Zi",
+      role: "Story Telling / Photography",
+      photo: team5,
+      linkedin: "",
     },
     {
       name: "Jideofor Onyeka Jeremiah",
@@ -25,6 +39,8 @@ export default function Team() {
       photo: team1,
       linkedin: "https://www.linkedin.com/in/onyeka-jeremiah-jideofor-46154736b/",
     },
+    
+
    
   ];
 

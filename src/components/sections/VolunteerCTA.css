@@ -1,0 +1,98 @@
+/* ───────── VOLUNTEER CTA (Modern, Clean, Classy) ───────── */
+
+.volunteer-cta {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(rgb(26, 26, 31), rgba(0, 0, 0, 0.68)), url('../../assets/hero-volunteers.webp') center center / cover no-repeat;
+  background-attachment: scroll !important;
+  text-align: center;
+}
+
+.volunteer-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.volunteer-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* ---- TITLE ---- */
+.volunteer-title {
+  font-size: clamp(1.8rem, 4vw, 2rem); /* max 2rem */
+  font-weight: 900;
+  color: var(--v4c-dark-blue);
+  margin-bottom: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+
+  background: linear-gradient(90deg, var(--v4c-blue), #00ccff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  hyphens: none;          /* Remove hyphens */
+  -webkit-hyphens: none;
+}
+
+/* ---- TEXT ---- */
+.volunteer-text {
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin: 0 auto 3rem auto;
+  max-width: 640px;
+  opacity: 0.9;
+
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+/* ---- BUTTON ---- */
+.volunteer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  background: linear-gradient(135deg, var(--v4c-blue), #008ee6);
+  color: white;
+
+  font-size: 1.35rem;
+  font-weight: 800;
+  padding: 1.2rem 3.6rem;
+
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+
+  box-shadow: 0 20px 40px rgba(0, 119, 204, 0.35);
+  transition: all 0.35s ease;
+}
+
+.volunteer-btn:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, #0066cc, #007be0);
+  box-shadow: 0 26px 60px rgba(0, 102, 204, 0.45);
+}
+
+.volunteer-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.volunteer-btn:hover .arrow {
+  transform: translateX(8px);
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 768px) {
+  .volunteer-title {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+  .volunteer-text {
+    font-size: 1.3rem;
+  }
+  .volunteer-btn {
+    font-size: 1.25rem;
+    padding: 1.1rem 3rem;
+  }
+}
