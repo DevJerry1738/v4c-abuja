@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* Quick Links
         <div className="footerColumn">
           <h3>Quick Links</h3>
           <a href="/">Home</a>
@@ -26,7 +26,7 @@ export default function Footer() {
           <a href="/about">About Us</a>
           <a href="/team">Team</a>
           <a href="/#volunteer">Join Us</a>
-        </div>
+        </div> */}
 
         {/* Contact */}
         <div className="footerColumn">
