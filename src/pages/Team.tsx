@@ -1,5 +1,4 @@
 // src/pages/Team.tsx
-import { Linkedin } from "lucide-react";
 import "./Team.css";
 import team1 from "../assets/team-1.webp";
 import team2 from "../assets/team-2.webp";
