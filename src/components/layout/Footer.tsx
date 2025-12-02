@@ -25,7 +25,7 @@ export default function Footer() {
           <a href="/#stats">Our Impact</a>
           <a href="/about">About Us</a>
           <a href="/team">Team</a>
-          <a href="/#form">Join Us</a>
+          <a href="/#volunteer">Join Us</a>
         </div>
 
         {/* Contact */}

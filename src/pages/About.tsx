@@ -1,6 +1,5 @@
 // src/pages/About.tsx
-import { useNavigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Users,
   GraduationCap,
@@ -10,23 +9,13 @@ import {
   ArrowRight,
   ArrowDown,
 } from "lucide-react";
+import VolunteerModal from "../components/sections/VolunteerModal";
 import "./About.css";
 
 export default function About() {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const goToSection = (sectionId: string) => {
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-      }, 400);
-    } else {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+  // Animate cards on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -40,7 +29,6 @@ export default function About() {
     );
 
     document.querySelectorAll(".animate-on-scroll").forEach((el) => observer.observe(el));
-
     return () => observer.disconnect();
   }, []);
 
@@ -51,7 +39,6 @@ export default function About() {
         <div className="hero-bg"></div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          
           <h1 className="hero-title">
             About <span className="highlight">Volunteers4Cause</span>
           </h1>
@@ -75,7 +62,7 @@ export default function About() {
               <strong>Volunteers4Cause Abuja Chapter</strong> is a dynamic network of passionate, purpose-driven individuals committed to creating meaningful social change across communities in Abuja, Nigeria.
             </p>
             <p>
-              As a proud community powered by <strong>WorldMerit</strong>, our mission is to empower youth and mobilize citizens to take action toward solving real-life challenges, especially those related to poverty, education, health, climate action, civic engagement, and gender equality.
+              As a proud community powered by <strong>WorldMerit</strong>, our mission is to empower youth and mobilize citizens to take action toward solving real-life challenges — especially those related to poverty, education, health, climate action, civic engagement, and gender equality.
             </p>
           </div>
 
@@ -113,7 +100,6 @@ export default function About() {
               <p>We collaborate with organizations, government, and communities to multiply results.</p>
             </div>
 
-            {/* Quote Card */}
             <div className="quote-card animate-on-scroll">
               <p className="quote">
                 "Action is the foundational key to all success."
@@ -124,19 +110,28 @@ export default function About() {
             </div>
           </div>
 
-          {/* JOIN CTA */}
+          {/* JOIN CTA — OPENS MODAL */}
           <div className="join-cta animate-on-scroll">
             <h2 className="join-title">Ready to Make a Difference?</h2>
             <p className="join-text">
               If you are passionate about sustainable development and believe in the power of collective action, we invite you to connect, collaborate, and contribute.
             </p>
-            <button onClick={() => goToSection("form")} className="join-button">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="join-button"
+            >
               Become a Volunteer
               <ArrowRight className="arrow-icon" />
             </button>
           </div>
         </div>
       </section>
+
+      {/* MODAL */}
+      <VolunteerModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </>
   );
 }

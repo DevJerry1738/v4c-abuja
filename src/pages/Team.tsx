@@ -7,6 +7,9 @@ import team3 from "../assets/team-3.jpg";
 import team4 from "../assets/team-4.webp";
 import team5 from "../assets/team-5.webp";
 import team6 from "../assets/team-6.png";
+import team7 from "../assets/team-7.webp";
+import team8 from "../assets/team-8.webp";
+import team9 from "../assets/team-9.webp";
 
 export default function Team() {
   const team = [
@@ -14,37 +17,55 @@ export default function Team() {
       name: "Sese Bula",
       role: "Team Lead",
       photo: team4,
-      linkedin: "",
+      
     },
     {
       name: "Ummi-khulsum Jibreel",
       role: "Communication Lead",
       photo: team2,
-      linkedin: "",
+     
     },
     {
       name: "Juliana Jesse Mavah",
       role: "Outreach Lead",
       photo: team3,
-      linkedin: "https://www.linkedin.com/in/juliana-jesse-mavah-15857a144/",
+     
     },
     {
       name: "Zong Janet Zi",
       role: "Story Telling / Photography",
       photo: team5,
-      linkedin: "",
+      
     },
     {
       name: "Agbo Thomas Tordue",
       role: "Recruitment Lead",
       photo: team6,
-      linkedin: "",
+     
+    },
+    {
+      name: "Nafisa Ibrahim Suleiman",
+      role: "Resource Lead",
+      photo: team7,
+     
+    },
+    {
+      name: "Abdulqadir Kawu Shuaibu",
+      role: "Assistant Resource Lead",
+      photo: team9,
+      
+    },
+    {
+      name: "Joseph Jesse Mavah",
+      role: "Graphics Designer-1",
+      photo: team8,
+      
     },
     {
       name: "Jideofor Onyeka Jeremiah",
       role: "Web Developer",
       photo: team1,
-      linkedin: "https://www.linkedin.com/in/onyeka-jeremiah-jideofor-46154736b/",
+      
     },
     
     
@@ -77,19 +98,7 @@ export default function Team() {
                 </div>
                 <h3 className="team-name">{member.name}</h3>
                 <p className="team-role">{member.role}</p>
-                {member.linkedin ? (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="linkedin-link"
-                    aria-label={`Visit ${member.name}'s LinkedIn`}
-                  >
-                    <Linkedin size={28} />
-                  </a>
-                ) : (
-                  <div style={{ height: "56px" }} />
-                )}
+                
               </div>
             ))}
           </div>
