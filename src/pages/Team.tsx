@@ -9,6 +9,8 @@ import team6 from "../assets/team-6.png";
 import team7 from "../assets/team-7.webp";
 import team8 from "../assets/team-8.webp";
 import team9 from "../assets/team-9.webp";
+import team10 from "../assets/team-10.webp";
+import team11 from "../assets/team-11.webp";
 
 export default function Team() {
   const team = [
@@ -31,6 +33,12 @@ export default function Team() {
      
     },
     {
+      name: "Haruna Usuf Argungu",
+      role: "Outreach Lead",
+      photo: team10,
+      
+    },
+    {
       name: "Zong Janet Zi",
       role: "Story Telling / Photography",
       photo: team5,
@@ -40,6 +48,12 @@ export default function Team() {
       name: "Agbo Thomas Tordue",
       role: "Recruitment Lead",
       photo: team6,
+     
+    },
+    {
+      name: "Gibson Fanasom Lord ",
+      role: "Assistant Recruitment Lead",
+      photo: team11,
      
     },
     {
@@ -66,6 +80,7 @@ export default function Team() {
       photo: team1,
       
     },
+    
     
     
     
